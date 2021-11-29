@@ -41,10 +41,11 @@
 
                     </ul>
 
-                </div><i class="bi bi-cart4  px-5" id="cart"><span class="translate-middle badge rounded-pill bg-warning" id="cart-badge">
+                </div>
+                <a href="#cart.html"><i class="bi bi-cart4  px-5" id="cart"><span class="translate-middle badge rounded-pill bg-warning" id="thebadge">
                     0
                     <span class="visually-hidden">unread messages</span>
-                </span></i>
+                </span></i></a>
             </div>
         </nav>
     </div>
@@ -56,7 +57,7 @@
                         <h1 class="h1 text-warning" id="pizzaplace">Pizza Place</h1>
                         <h3>It just not about food, it the experience.</h3> It takes a tasty, delicious pizza to make the gathering more enjoyable and blissful.
                     </p>
-                    <a class="btn btn-success" data-bs-toggle="modal" href="#exampleModalToggle" role="button" onclick=a ddToCart()>Order Now</a>
+                    <a class="btn btn-success" data-bs-toggle="modal" href="#exampleModalToggle" role="button" onclick=placeToCart()>Order Now</a>
                     <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
                         <div class="modal-dialog modal-dialog-centered">
                             <div class="modal-content">
@@ -68,59 +69,59 @@
                                 </div>
                                 <div class="modal-body bg-light px-4">
                                     <p class="h6 text-center ">Select your preffered size</p>
-                                    <select class="form-select" aria-label="Default select example">
-                                     
-                                        <option selected>Select preffered size here</option>
-                                        <option value="1">Small</option>
-                                        <option value="2">Medium</option>
-                                        <option value="3">Large</option>
+                                    <select class="form-select" id="pizzaSize" aria-label="Default select example">
+                                        <option value="">Small</option>
+                                        <option value="">Medium</option>
+                                        <option value="">Large</option>
                                       </select>
 
-                                    <p class="h6 text-center mt-4">Choose preffered toppings</p>
-                                    <select class="form-select" aria-label="Default select example">
-                                        <option selected>Select preffered size here</option>
-                                        <option value="1">Crimpsy</option>
-                                        <option value="2">Stuffed</option>
-                                        <option value="3">Glutten free</option>
+                                    <p class="h6 text-center mt-4">Choose preffered Crust</p>
+                                    <select class="form-select" aria-label="Default select example"><
+                                        <option value="">Crimpsy</option>
+                                        <option value="">Stuffed</option>
+                                        <option value="">Gluttenfree</option>
                                       </select>
 
 
-                                    <p class="h6 text-center mt-4">Check crust </p>
+                                    <p class="h6 text-center mt-4">Check Topping </p>
                                     <div class="form-check mt-2 px-5">
                                         <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
                                         <label class="form-check-label" for="flexRadioDefault1">
-                                          Rocker
+                                        Prosciutto
                                         </label>
                                     </div>
                                     <div class="form-check px-5">
                                         <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
                                         <label class="form-check-label" for="flexRadioDefault2">
-                                          Cheese
+                                            Garlic_butter
                                         </label>
                                     </div>
                                     <div class="form-check px-5">
                                         <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
                                         <label class="form-check-label" for="flexRadioDefault2">
-                                           Pepper 
+                                            Pepperoni 
                                         </label>
                                     </div>
-
+                                    <div class="input-group input-group-sm mt-3 mb-3">
+                                        <span class="input-group-text" id="inputGroup-sizing-sm">Enter your Quantity here: </span>
+                                        <input id="quantityReq" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                                    </div>
                                 </div>
                                 <div class="modal-footer ">
-                                    <button class="btn btn-primary " onclick="AddToCart()">Place to Cart</button></button>
+                                    <button class="btn btn-primary " onclick="placeToCart()">Place to Cart</button></button>
                                     <!-- <button class="btn btn-primary " data-bs-target="#exampleModalToggle2 " data-bs-toggle="modal " data-bs-dismiss="modal ">Open second modal</button> -->
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <!-- <div class="modal fade " id="exampleModalToggle2 " aria-hidden="true " aria-labelledby="exampleModalToggleLabel2 " tabindex="-1 ">
+                    <div class="modal fade " id="exampleModalToggle2 " aria-hidden="true " aria-labelledby="exampleModalToggleLabel2 " tabindex="-1 ">
                         <div class="modal-dialog modal-dialog-centered ">
                             <div class="modal-content ">
                                 <div class="modal-header ">
                                     <h5 class="modal-title " id="exampleModalToggleLabel2 ">Modal 2</h5>
                                     <button type="button " class="btn-close " data-bs-dismiss="modal " aria-label="Close "></button>
                                 </div>
-                                <div class="modal-body ">
+                                <div class="modal-body " id="card-list">
                                     Hide this modal and show the first with the button below.
                                 </div>
                                 <div class="modal-footer ">
@@ -128,7 +129,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div> -->
+                    </div>
 
                 </div>
                 <div class="col-md-6 m-2 p-5 "> <img class="img fluid w-100 " src="./Assets/imgbin-pizza-fast-food-barbecue-meat-beef-pizza-0pPTN1c4cRFMUMLUSZPmnPw8X-removebg-preview.png "></div>
@@ -346,8 +347,9 @@
 
 
                 </div>
-            </div>
+            </div><p>copyright &copy 2021</p>
         </div>
+        
 
     </section>
 
