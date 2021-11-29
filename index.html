@@ -68,7 +68,7 @@
 
                                 </div>
                                 <div class="modal-body bg-light px-4">
-                                    <p class="h6 text-center ">Select your preffered size</p>
+                                    <!-- <p class="h6 text-center ">Select your preffered size</p>
                                     <select class="form-select" id="pizzaSize" aria-label="Default select example">
                                         <option value="">Small</option>
                                         <option value="">Medium</option>
@@ -80,10 +80,26 @@
                                         <option value="">Crimpsy</option>
                                         <option value="">Stuffed</option>
                                         <option value="">Gluttenfree</option>
-                                      </select>
+                                      </select> -->
 
 
                                     <p class="h6 text-center mt-4">Check Topping </p>
+                                    <div class="input-group input-group-sm mt-3 mb-3">
+                                        <span class="input-group-text" id="inputGroup-sizing-sm">Select preferred crust here: </span>
+                                        <select class="form-select text-center fw-bold" aria-label="Default select example"><
+                                            <option value="">Crimpsy</option>
+                                            <option value="">Stuffed</option>
+                                            <option value="">Gluttenfree</option>
+                                          </select></div>
+
+                                    <div class="input-group input-group-sm mt-4 mb-3">
+                                        <span class="input-group-text" id="inputGroup-sizing-sm">Select preferred size here:: </span>
+                                        <select class="form-select text-center fw-bold" aria-label="Default select example"><
+                                                <option value="">Small</option>
+                                                <option value="">Medium</option>
+                                                <option value="">Large</option>
+                                              </select></div>
+
                                     <div class="form-check mt-2 px-5">
                                         <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
                                         <label class="form-check-label" for="flexRadioDefault1">
@@ -106,6 +122,8 @@
                                         <span class="input-group-text" id="inputGroup-sizing-sm">Enter your Quantity here: </span>
                                         <input id="quantityReq" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
                                     </div>
+
+
                                 </div>
                                 <div class="modal-footer ">
                                     <button class="btn btn-primary " onclick="placeToCart()">Place to Cart</button></button>
