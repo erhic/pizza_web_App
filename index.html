@@ -24,19 +24,19 @@
                 <div class="collapse navbar-collapse justify-content-center p-4 " id="navbarNav">
                     <ul class="navbar-nav ">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#home">Home</a>
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#abouut">About</a>
+                            <a class="nav-link" href="#">About</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#offers">Offer</a>
+                            <a class="nav-link" href="#">Offer</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link " href="#menu">Menu</a>
+                            <a class="nav-link " href="#">Menu</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link " href="#conta">Contact</a>
+                            <a class="nav-link " href="#">Contact</a>
                         </li>
 
                     </ul>
@@ -57,7 +57,7 @@
                         <h1 class="h1 text-warning" id="pizzaplace">Pizza Place</h1>
                         <h3>It just not about food, it the experience.</h3> It takes a tasty, delicious pizza to make the gathering more enjoyable and blissful.
                     </p>
-                    <a class="btn btn-success" data-bs-toggle="modal" href="#exampleModalToggle" role="button" onclick=placeToCart()>Order Now</a>
+                    <!-- <button class="btn btn-success" data-bs-toggle="modal" href="#exampleModalToggle" role="button" onclick="placeToCart()">Order Now</button> -->
                     <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
                         <div class="modal-dialog modal-dialog-centered">
                             <div class="modal-content">
@@ -68,22 +68,8 @@
 
                                 </div>
                                 <div class="modal-body bg-light px-4">
-                                    <!-- <p class="h6 text-center ">Select your preffered size</p>
-                                    <select class="form-select" id="pizzaSize" aria-label="Default select example">
-                                        <option value="">Small</option>
-                                        <option value="">Medium</option>
-                                        <option value="">Large</option>
-                                      </select>
 
-                                    <p class="h6 text-center mt-4">Choose preffered Crust</p>
-                                    <select class="form-select" aria-label="Default select example"><
-                                        <option value="">Crimpsy</option>
-                                        <option value="">Stuffed</option>
-                                        <option value="">Gluttenfree</option>
-                                      </select> -->
-
-
-                                    <p class="h6 text-center mt-4">Check Topping </p>
+                                    <p class="h5 text-center fw-bold mt-4">Choose your PIZZA description </p>
                                     <div class="input-group input-group-sm mt-3 mb-3">
                                         <span class="input-group-text" id="inputGroup-sizing-sm">Select preferred crust here: </span>
                                         <select class="form-select text-center fw-bold" aria-label="Default select example"><
@@ -126,7 +112,7 @@
 
                                 </div>
                                 <div class="modal-footer ">
-                                    <button class="btn btn-primary " onclick="placeToCart()">Place to Cart</button></button>
+                                    <button class="btn btn-primary " id="addtocart">Place to Cart</button></button>
                                     <!-- <button class="btn btn-primary " data-bs-target="#exampleModalToggle2 " data-bs-toggle="modal " data-bs-dismiss="modal ">Open second modal</button> -->
                                 </div>
                             </div>
@@ -250,7 +236,8 @@
                             <h5 class="card-title ">Pizza</h5>
                             <p class="card-text ">Prosciutto
                             </p>
-                            <a href="# " class="btn btn-primary ">Add to cart</a>
+                            <!-- <a href="# " id="Addtocart" class="btn btn-primary ">Add to cart</a> -->
+                            <a href="# " class="add-cart" class="btn btn-primary ">Add to cart</a>
                         </div>
                     </div>
                 </div>
@@ -261,7 +248,7 @@
                             <h5 class="card-title ">Pizza</h5>
                             <p class="card-text ">Garlic-butter-prawns
                             </p>
-                            <a href="# " class="btn btn-primary ">Add to cart</a>
+                            <a href="# " class="add-cart" class="btn btn-primary ">Add to cart</a>
                         </div>
                     </div>
                 </div>
@@ -272,7 +259,7 @@
                             <h5 class="card-title ">Pizza </h5>
                             <p class="card-text ">Pepperoni-supreme
                             </p>
-                            <a href="# " class="btn btn-primary ">Add to cart</a>
+                            <a href="# " class="add-cart" class="btn btn-primary ">Add to cart</a>
                         </div>
                     </div>
 
@@ -290,7 +277,7 @@
                             <h5 class="card-title ">Pizza</h5>
                             <p class="card-text ">Crimpsy
                             </p>
-                            <a href="# " class="btn btn-primary ">Add to cart</a>
+                            <a href="# " class="add-cart" class="btn btn-primary ">Add to cart</a>
                         </div>
                     </div>
                 </div>
@@ -301,7 +288,7 @@
                             <h5 class="card-title ">Pizza</h5>
                             <p class="card-text ">Stuffed
                             </p>
-                            <a href="# " class="btn btn-primary ">Add to cart</a>
+                            <a href='javascript:void();' class="add-cart" class="btn btn-primary ">Add to cart</a>
                         </div>
                     </div>
                 </div>
@@ -312,7 +299,7 @@
                             <h5 class="card-title ">Pizza</h5>
                             <p class="card-text ">Thin-crimpsy
                             </p>
-                            <a href="# " class="btn btn-primary ">Add to cart</a>
+                            <a href='javascript:void();' class="add-cart" class="btn btn-primary ">Add to cart</a>
                         </div>
                     </div>
                 </div>
@@ -322,7 +309,7 @@
                         <div " class="card-body h-100 ">
                                         <h5 class="card-title ">Pizza</h5>
                                         <p class=" card-text ">Glutten-free</p>
-                                        <a href="# " class="btn btn-primary ">Add to cart</a>
+                                        <a href='javascript:void();' class="add-cart " class="btn btn-primary ">Add to cart</a>
                                     </div>
                                 </div>
                             </div>
