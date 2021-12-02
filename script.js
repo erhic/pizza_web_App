@@ -17,13 +17,16 @@ function onLoadCartItems() {
         document.querySelector('#cartlabel').textContent = cartItemscount;
     }
 }
+for (let i = 0; i < cart.length; i++) {
+    cart[i].addEVentListener('click', () => {
+        cartItemscount(cart[i]);
+    })
+}
 
 
 
-
-
-function placeToCart(pizzaSize, pizzatoppings, pizzacrust, price, pizzaQuantity) {
-    pizza = new objPizza("pizzaSize", "pizzatoppings", "pizzacrust", parseInt(price), parseInt(pizzaQuantity));
+function placeToCart(size, toppings, crust, price, quantity) {
+    pizza = new objPizza("size", "toppings", "crust", parseInt(price), parseInt(quantity));
 
     // Add pizza object to array cart.
     cart.push(pizza);
@@ -51,7 +54,30 @@ function placeToCart(pizzaSize, pizzatoppings, pizzacrust, price, pizzaQuantity)
         // document.getElementById("#cartlabel").textContent = cartItemscount;
 
     }
+    toCart();
     console.log('cartItemscount');
     console.log(typeof cartItemscount)
 }
 onLoadCartItems();
+
+
+
+function toCart() {
+    size = document.getElementById("size").value;
+    quantity = document.getElementById("quantityReq").value;
+    crust = document.getElementById("crust").value;
+    toppings = document.getElementById("topping").value;
+    console.log(size)
+
+    let sizePrice = 0;
+
+    if (sizePrice == "Large") {
+        price = 475;
+    } else if (sizePrice == "Medium") {
+        price = 400;
+    } else if (sizePrice == "Small") {
+        price = 380;
+
+    }
+
+}
