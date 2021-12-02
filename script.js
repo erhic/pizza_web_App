@@ -27,8 +27,8 @@ function placeToCart(size, toppings, crust, locationChecked, price, quantity) {
         cartItemscount += pizzaObject.quantity;
 
         // Add pizza element to orderedListDiv
-        orderedListDiv.innerHTML += "<div>Size: " + pizzaObject.size + "<br> Crust: <br> Topping: <br> Location: <br> " +
-            "Quantity: <br>Price: <br> <button onclick='removePizza(" + index + ")'>remove</button></div> <br> "
+        orderedListDiv.innerHTML += "<div>Size: " + pizzaObject.size + "<br> Crust: " + pizzaObject.crust + "<br> Topping: " + pizzaObject.topping + " <br> Location: <br> " +
+            "Quantity:  " + pizzaObject.quantity + "<br>Price:  " + pizzaObject.price + "<br> <button onclick='removePizza(" + index + ")'>remove</button></div> <br> "
     });
 
     document.getElementById("cartlabel").innerText = cartItemscount;
