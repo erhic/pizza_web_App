@@ -58,7 +58,7 @@ function removePizza(index) {
     orderedListDiv.innerHTML = "";
     cart.forEach((pizzaObject, index) => {
         // Add pizza element to orderedListDiv
-        orderedListDiv.innerHTML += "<div>Size: " + pizzaObject.size + "<br> Crust: <br> Topping: <br> Location: <br> Quantity: <br>Price: </div> <br> <button onclick='removePizza(" + index + ")'>remove</button>"
+        orderedListDiv.innerHTML += "<div>Size: " + pizzaObject.size + "<br> Crust:" + pizzaObject.crust + " <br> Topping: " + pizzaObject.topping + "<br> Location: " + pizzaObject.delivered + "<br> Quantity: " + pizzaObject.quantity + "<br>Price: " + pizzaObject.price + "</div> <br> <button onclick='removePizza(" + index + ")'>remove</button>"
     });
 }
 
@@ -77,12 +77,12 @@ btnClicked.addEventListener('click', function() {
     console.log(pizasize.value)
 
     placeToCart(pizasize.value, pizacrust.value, pizatoping.value, pizalocation.checked,
-        getTotal(pizasize.value, pizacrust.value, pizatoping.value), pizaquantity.value)
+        getTotal(pizasize.value, pizacrust.value, pizatoping.value), pizaquantity.value, pizalocation)
 
     console.log("getTotal: " + getTotal(pizasize.value, pizacrust.value, pizatoping.value))
 })
 
-function getTotal(size, crust, topping) {
+function getTotal(size, crust, topping, delivered) {
     let price = 0
     if (size == 'small') {
         // console.log(price += 300)
@@ -113,5 +113,9 @@ function getTotal(size, crust, topping) {
         }
     } else {
         return price;
+    }
+
+    if (delivered == true) {
+        prompt("Enter you location of delivery")
     }
 }
