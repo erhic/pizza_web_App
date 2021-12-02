@@ -39,13 +39,20 @@
                             <a class="nav-link " href="#">Contact</a>
                         </li>
 
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link " href="# " data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">
+                                <i class="bi bi-cart4"></i>
+                                <span class="translate-middle badge rounded-pill bg-warning" id="cartlabel">
+                                    0
+                                    <span class="visually-hidden">unread messages</span>
+                                </span>
+                            </a>
+                        </li>
                     </ul>
 
                 </div>
-                <a href="#cart.html"><i class="bi bi-cart4  px-5" id="cart"><span class="translate-middle badge rounded-pill bg-warning" id="thebadge">
-                    0
-                    <span class="visually-hidden">unread messages</span>
-                </span></i></a>
+
             </div>
         </nav>
     </div>
@@ -57,89 +64,105 @@
                         <h1 class="h1 text-warning" id="pizzaplace">Pizza Place</h1>
                         <h3>It just not about food, it the experience.</h3> It takes a tasty, delicious pizza to make the gathering more enjoyable and blissful.
                     </p>
-                    <!-- <button class="btn btn-success" data-bs-toggle="modal" href="#exampleModalToggle" role="button" onclick="placeToCart()">Order Now</button> -->
+
                     <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
                         <div class="modal-dialog modal-dialog-centered">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title text-center" id="exampleModalToggleLabel ">
-                                        <h5>
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-
+                                    <h5 class="modal-title" id="exampleModalToggleLabel">Modal 1</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
-                                <div class="modal-body bg-light px-4">
-
+                                <div class="modal-body">
                                     <p class="h5 text-center fw-bold mt-4">Choose your PIZZA description </p>
+
                                     <div class="input-group input-group-sm mt-3 mb-3">
                                         <span class="input-group-text" id="inputGroup-sizing-sm">Select preferred crust here: </span>
-                                        <select class="form-select text-center fw-bold" aria-label="Default select example"><
-                                            <option value="">Crimpsy</option>
+                                        <select class="form-select text-center fw-bold" id="crust" aria-label="Default select example"><
+                                            <option value="Crimpsy">Crimpsy @200</option>
                                             <option value="">Stuffed</option>
-                                            <option value="">Gluttenfree</option>
-                                          </select></div>
+                                            <option value="Gruttenfree">Gluttenfree</option>
+                                          </select>
+                                    </div>
+
+                                    <div class="input-group input-group-sm mt-3 mb-3">
+                                        <span class="input-group-text" id="inputGroup-sizing-sm">Select preferred Topping here: </span>
+                                        <select class="form-select text-center fw-bold" id="topping" aria-label="Default select example"><
+                                            <option value="">Prosciutto</option>
+                                            <option value="">Garlic_butter</option>
+                                            <option value="">Pepperoni</option>
+                                        </select>
+                                    </div>
 
                                     <div class="input-group input-group-sm mt-4 mb-3">
                                         <span class="input-group-text" id="inputGroup-sizing-sm">Select preferred size here:: </span>
-                                        <select class="form-select text-center fw-bold" aria-label="Default select example"><
-                                                <option value="">Small</option>
-                                                <option value="">Medium</option>
-                                                <option value="">Large</option>
-                                              </select></div>
 
-                                    <div class="form-check mt-2 px-5">
-                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                                        <label class="form-check-label" for="flexRadioDefault1">
-                                        Prosciutto
-                                        </label>
+                                        <select class="form-select text-center fw-bold" id="size" aria-label="Default select example">
+                                            <option value="small">Small</option>
+                                            <option value="medium">Medium</option>
+                                            <option value="large">Large</option>
+                                        </select>
                                     </div>
-                                    <div class="form-check px-5">
-                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-                                        <label class="form-check-label" for="flexRadioDefault2">
-                                            Garlic_butter
-                                        </label>
-                                    </div>
-                                    <div class="form-check px-5">
-                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-                                        <label class="form-check-label" for="flexRadioDefault2">
-                                            Pepperoni 
-                                        </label>
-                                    </div>
+
                                     <div class="input-group input-group-sm mt-3 mb-3">
                                         <span class="input-group-text" id="inputGroup-sizing-sm">Enter your Quantity here: </span>
-                                        <input id="quantityReq" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                                        <input id="quantity" value="1" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
                                     </div>
 
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="pickup">
+                                        <label class="form-check-label" for="flexRadioDefault1">
+                                        pick up
+                                        </label>
+                                    </div>
 
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="delivered" checked>
+                                        <label class="form-check-label" for="flexRadioDefault2">
+                                        Delivered(*fees-500/=)
+                                        </label>
+                                    </div>
+
+                                    <div class="form-floating">
+                                        <textarea class="form-control" placeholder="Leave a comment here" id="textarea" style="height: 100px"></textarea>
+                                        <label for="floatingTextarea2">Enter your location</label><br>
+                                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="modal-footer ">
-                                    <button class="btn btn-primary " id="addtocart">Place to Cart</button></button>
-                                    <!-- <button class="btn btn-primary " data-bs-target="#exampleModalToggle2 " data-bs-toggle="modal " data-bs-dismiss="modal ">Open second modal</button> -->
+                                <div class="modal-footer">
+                                    <button class="btn btn-primary" data-bs-target="#exampleModalToggle2" id="submitbtn" data-bs-dismiss="modal" data-bs-toggle="modal">Submit</button>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="modal fade " id="exampleModalToggle2 " aria-hidden="true " aria-labelledby="exampleModalToggleLabel2 " tabindex="-1 ">
-                        <div class="modal-dialog modal-dialog-centered ">
-                            <div class="modal-content ">
-                                <div class="modal-header ">
-                                    <h5 class="modal-title " id="exampleModalToggleLabel2 ">Modal 2</h5>
-                                    <button type="button " class="btn-close " data-bs-dismiss="modal " aria-label="Close "></button>
+
+                    <!--Checkout Modal -->
+                    <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalToggleLabel2">Modal 2</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
-                                <div class="modal-body " id="card-list">
-                                    Hide this modal and show the first with the button below.
+                                <div class="modal-body">
+                                    <div id="ordered-list"></div>
                                 </div>
-                                <div class="modal-footer ">
-                                    <button class="btn btn-primary " data-bs-target="#exampleModalToggle " data-bs-toggle="modal " data-bs-dismiss="modal ">Back to first</button>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                                 </div>
                             </div>
                         </div>
                     </div>
-
+                    <a class="btn btn-primary" data-bs-toggle="modal" href="#exampleModalToggle" role="button">Add To Cart</a>
                 </div>
-                <div class="col-md-6 m-2 p-5 "> <img class="img fluid w-100 " src="./Assets/imgbin-pizza-fast-food-barbecue-meat-beef-pizza-0pPTN1c4cRFMUMLUSZPmnPw8X-removebg-preview.png "></div>
+            </div>
+
+            <div class="col-md-6 m-2 p-5 ">
+                <img class="img fluid w-100 " src="./Assets/imgbin-pizza-fast-food-barbecue-meat-beef-pizza-0pPTN1c4cRFMUMLUSZPmnPw8X-removebg-preview.png ">
             </div>
         </div>
     </section>
+
     <!-- offer section -->
     <section id="offers ">
         <div class="container ">
@@ -237,7 +260,9 @@
                             <p class="card-text ">Prosciutto
                             </p>
                             <!-- <a href="# " id="Addtocart" class="btn btn-primary ">Add to cart</a> -->
-                            <a href="# " class="add-cart" class="btn btn-primary ">Add to cart</a>
+                            <button class="btn btn-warning" onclick="placeToCart('Small', 'preporini', 'Glutten free', '',100, 1)">Add to cart</button>
+
+                            <!-- <a href="# " class="add-cart" class="btn btn-primary" style="text-decoration: none;">Add to cart</a> -->
                         </div>
                     </div>
                 </div>
@@ -248,7 +273,9 @@
                             <h5 class="card-title ">Pizza</h5>
                             <p class="card-text ">Garlic-butter-prawns
                             </p>
-                            <a href="# " class="add-cart" class="btn btn-primary ">Add to cart</a>
+                            <button class="btn btn-primary" onclick="placeToCart('Small', 'pineapple', 'Glutten free', 100, 1)">Add to cart</button>
+
+                            <!-- <a href="# " class="add-cart" class="btn btn-primary " style="text-decoration: none;">Add to cart</a> -->
                         </div>
                     </div>
                 </div>
@@ -259,7 +286,9 @@
                             <h5 class="card-title ">Pizza </h5>
                             <p class="card-text ">Pepperoni-supreme
                             </p>
-                            <a href="# " class="add-cart" class="btn btn-primary ">Add to cart</a>
+                            <!-- <a href="# " class="add-cart" class="btn btn-primary " style="text-decoration: none;">Add to cart</a> -->
+                            <button class="btn btn-primary" onclick="placeToCart('Small', 'pineapple', 'Glutten free', 100, 1)">Add to cart</button>
+
                         </div>
                     </div>
 
@@ -277,7 +306,9 @@
                             <h5 class="card-title ">Pizza</h5>
                             <p class="card-text ">Crimpsy
                             </p>
-                            <a href="# " class="add-cart" class="btn btn-primary ">Add to cart</a>
+                            <button class="btn btn-primary" onclick="placeToCart('Small', 'pineapple', 'Glutten free', 100, 1)">Add to cart</button>
+
+                            <!-- <a href="# " class="add-cart" class="btn btn-primary " style="text-decoration: none;">Add to cart</a> -->
                         </div>
                     </div>
                 </div>
@@ -288,7 +319,9 @@
                             <h5 class="card-title ">Pizza</h5>
                             <p class="card-text ">Stuffed
                             </p>
-                            <a href='javascript:void();' class="add-cart" class="btn btn-primary ">Add to cart</a>
+                            <button class="btn btn-primary" onclick="placeToCart('Small', 'pineapple', 'Glutten free', 100, 1)">Add to cart</button>
+
+                            <!-- <a href="#" class="add-cart" class="btn btn-primary " style="text-decoration: none;">Add to cart</a> -->
                         </div>
                     </div>
                 </div>
@@ -299,7 +332,9 @@
                             <h5 class="card-title ">Pizza</h5>
                             <p class="card-text ">Thin-crimpsy
                             </p>
-                            <a href='javascript:void();' class="add-cart" class="btn btn-primary ">Add to cart</a>
+                            <button class="btn btn-primary" onclick="placeToCart('Small', 'pineapple', 'Glutten free', 100, 1)">Add to cart</button>
+
+                            <!-- <a href="#" class="add-cart" class="btn btn-primary " style="text-decoration: none;">Add to cart</a> -->
                         </div>
                     </div>
                 </div>
@@ -309,7 +344,9 @@
                         <div " class="card-body h-100 ">
                                         <h5 class="card-title ">Pizza</h5>
                                         <p class=" card-text ">Glutten-free</p>
-                                        <a href='javascript:void();' class="add-cart " class="btn btn-primary ">Add to cart</a>
+                                        <button class="btn btn-primary " onclick="placeToCart( 'Small', 'pineapple', 'Glutten free', 100, 1) ">Add to cart</button>
+
+                                        <!-- <a href="# " class="add-cart " class="btn btn-primary " style="text-decoration: none; ">Add to cart</a> -->
                                     </div>
                                 </div>
                             </div>

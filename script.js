@@ -10,32 +10,25 @@ class objPizza {
 
 const cart = [];
 
-// function on Refresh to load  data in the local storage value
-function onLoadCartItems() {
-    let cartItemscount = localStorage.getItem('cartItemscount');
-    if (cartItemscount) {
-        document.querySelector('#cartlabel').textContent = cartItemscount;
-    }
-}
-for (let i = 0; i < cart.length; i++) {
-    cart[i].addEVentListener('click', () => {
-        cartItemscount(cart[i]);
-    })
-}
 
 
-
-function placeToCart(size, toppings, crust, price, quantity) {
-    pizza = new objPizza("size", "toppings", "crust", parseInt(price), parseInt(quantity));
+function placeToCart(size, toppings, crust, locationChecked, price, quantity) {
+    console.log(price)
+    pizza = new objPizza(size, toppings, crust, parseInt(price), parseInt(quantity));
 
     // Add pizza object to array cart.
     cart.push(pizza);
-
-    //   get piza quantity
+    console.log(cart)
+        //   get piza quantity
     let cartItemscount = 0;
     // Loop each pizza object
-    cart.forEach(pizzaObject => {
+    orderedListDiv.innerHTML = "";
+    cart.forEach((pizzaObject, index) => {
         cartItemscount += pizzaObject.quantity;
+
+        // Add pizza element to orderedListDiv
+        orderedListDiv.innerHTML += "<div>Size: " + pizzaObject.size + "<br> Crust: <br> Topping: <br> Location: <br> " +
+            "Quantity: <br>Price: <br> <button onclick='removePizza(" + index + ")'>remove</button></div> <br> "
     });
 
     document.getElementById("cartlabel").innerText = cartItemscount;
@@ -54,30 +47,71 @@ function placeToCart(size, toppings, crust, price, quantity) {
         // document.getElementById("#cartlabel").textContent = cartItemscount;
 
     }
-    toCart();
+    // toCart();
     console.log('cartItemscount');
     console.log(typeof cartItemscount)
 }
-onLoadCartItems();
+
+function removePizza(index) {
+    cart.splice(index, 1);
+
+    orderedListDiv.innerHTML = "";
+    cart.forEach((pizzaObject, index) => {
+        // Add pizza element to orderedListDiv
+        orderedListDiv.innerHTML += "<div>Size: " + pizzaObject.size + "<br> Crust: <br> Topping: <br> Location: <br> Quantity: <br>Price: </div> <br> <button onclick='removePizza(" + index + ")'>remove</button>"
+    });
+}
 
 
+let pizasize = document.getElementById('size')
+    // console.log(pizasize)
+let pizacrust = document.getElementById('crust')
+let pizatoping = document.getElementById('topping')
+let pizalocation = document.getElementById('delivered')
+let pizaquantity = document.getElementById('quantity')
+let btnClicked = document.getElementById('submitbtn')
+let orderedListDiv = document.getElementById('ordered-list')
+console.log(btnClicked)
 
-function toCart() {
-    size = document.getElementById("size").value;
-    quantity = document.getElementById("quantityReq").value;
-    crust = document.getElementById("crust").value;
-    toppings = document.getElementById("topping").value;
-    console.log(size)
+btnClicked.addEventListener('click', function() {
+    console.log(pizasize.value)
 
-    let sizePrice = 0;
+    placeToCart(pizasize.value, pizacrust.value, pizatoping.value, pizalocation.checked,
+        getTotal(pizasize.value, pizacrust.value, pizatoping.value), pizaquantity.value)
 
-    if (sizePrice == "Large") {
-        price = 475;
-    } else if (sizePrice == "Medium") {
-        price = 400;
-    } else if (sizePrice == "Small") {
-        price = 380;
+    console.log("getTotal: " + getTotal(pizasize.value, pizacrust.value, pizatoping.value))
+})
 
+function getTotal(size, crust, topping) {
+    let price = 0
+    if (size == 'small') {
+        // console.log(price += 300)
+        if (crust == "Crimpsy") {
+            console.log("Total Price", price += 300 + 200)
+            return price += 300 + 200
+        } else if (crust == 'Gruttenfree') {
+            return price += 300 + 300
+        } else {
+            return price += 300 + 150
+        }
+    } else if (size == 'medium') {
+        if (crust == "Crimpsy") {
+            console.log("Medium total price=", price += 650 + 200)
+            return price += 650 + 200
+        } else if (crust == 'Gruttenfree') {
+            return price += 650 + 300
+        } else {
+            return price += 650 + 150
+        }
+    } else if (size == 'large') {
+        if (crust == "Crimpsy") {
+            return price += 900 + 200
+        } else if (crust == 'Gruttenfree') {
+            return price += 900 + 300
+        } else {
+            return price += 900 + 150
+        }
+    } else {
+        return price;
     }
-
 }
