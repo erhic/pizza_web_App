@@ -13,7 +13,7 @@ const cart = [];
 
 
 function placeToCart(size, toppings, crust, locationChecked, price, quantity) {
-    console.log(price)
+    // console.log(price)
     pizza = new objPizza(size, toppings, crust, parseInt(price), parseInt(quantity));
 
     // Add pizza object to array cart.
@@ -85,7 +85,7 @@ btnClicked.addEventListener('click', function() {
 function getTotal(size, crust, topping, delivered) {
     let price = 0
     if (size == 'small') {
-        // console.log(price += 300)
+
         if (crust == "Crimpsy") {
             console.log("Total Price", price += 300 + 200)
             return price += 300 + 200

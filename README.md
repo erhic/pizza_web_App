@@ -6,8 +6,11 @@
 ----
     This is a online pizza ordering website, offering delivery services for pizza on order.
 
- ### Design
-<img src="licence/design.png">
+ ### Demo
+<img src="licence/PizzaIn.gif">
+
+
+
 
 
 ### Technologies Used
