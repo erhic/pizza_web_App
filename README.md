@@ -1,4 +1,4 @@
-# Delani Studio
+# Pizza Web App
 
 ### Author:  [Eric N](https://github.com/erhic/pizza_web_App)
 
@@ -23,7 +23,7 @@
 
 ### Installion Process
 ----
-* To run the application ,the required tools required is mainly a browser application example like google chrome and access to the internet. To access the aplication online click (https://github.com/erhic/pizza_web_App).
+* To run the application ,the required tools required is mainly a browser application example like google chrome and access to the internet. To access the aplication online <kbd>click</kbd> (https://github.com/erhic/pizza_web_App).
 The application can run a mobile device or a computer.
 
 * To use the application offline in your local device;
